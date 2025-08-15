@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Conditional Link Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+    }
+    a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4285f4;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 18px;
+    }
+    a:hover {
+        background-color: #3367d6;
+    }
+</style>
+</head>
+<body>
+
+<h1>Welcome</h1>
+<div id="link-container"></div>
+
+<script>
+    // Target date: 15 Aug 2025, 16:00 local time
+    const targetDate = new Date(2025, 7, 15, 15, 0, 0); // Months are 0-indexed (7 = August)
+    const now = new Date();
+
+    if (now >= targetDate) {
+        const link = document.createElement('a');
+        link.href = "https://ranithsarkar.github.io/h/Policy-P000161279654.pdf";
+        link.textContent = "Download Insurance Certificate";
+        link.target = "_blank";
+        document.getElementById('link-container').appendChild(link);
+    } else {
+        document.getElementById('link-container').textContent = "Kindly visit this page at 5:00pm, 16 AUG 2025";
+    }
+</script>
+
+</body>
+</html>
